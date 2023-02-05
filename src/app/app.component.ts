@@ -6,6 +6,7 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { INITIAL_EVENTS, createEventId } from './event-utils';
 import momentPlugin from '@fullcalendar/moment';
+import { DayHeader } from '@fullcalendar/core/internal';
 
 @Component({
   selector: 'app-root',
@@ -15,19 +16,31 @@ import momentPlugin from '@fullcalendar/moment';
 export class AppComponent {
   calendarVisible = true;
   calendarOptions: CalendarOptions = {
+    // titleFormat: {
+    //   weekday: 'long'
+    // },
+    // dayGridMonth: {
+    //   dayHeaderFormat: {
+    //     weekday: 'long'
+    //   }
+    // }
 
-    locale: "pt-br",
-    views: {
-      month: {
-        columnFormat: 'dddd' // set format for month here
-      },
-      week: {
-        columnFormat: 'ddd d/M' // set format for week here
-      },
-      day: {
-        columnFormat: 'ddd Do' // set format for day here
-      }
+    dayHeaderFormat: {
+      weekday: 'long'
     },
+    locale: "pt-br",
+    // views: {
+    //   month: {
+    //     columnFormat: 'dddd' // set format for month here
+    //   },
+
+    //   week: {
+    //     columnFormat: 'ddd d/M' // set format for week here
+    //   },
+    //   day: {
+    //     columnFormat: 'ddd Do' // set format for day here
+    //   }
+    // },
     plugins: [
       interactionPlugin,
       dayGridPlugin,
